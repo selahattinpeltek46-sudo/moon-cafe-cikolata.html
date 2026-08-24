@@ -137,7 +137,11 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    background: radial-gradient(120% 140% at 50% -10%, #3a2413 0%, var(--chocolate-dark) 55%, #170d05 100%);
+    background:
+      linear-gradient(180deg, rgba(23,13,5,0.55) 0%, rgba(23,13,5,0.65) 55%, rgba(23,13,5,0.92) 100%),
+      url('images/hero-sisli-dag.png');
+    background-size: cover;
+    background-position: center;
     color: var(--cream);
     overflow: hidden;
     padding: 90px 0 110px;
@@ -169,6 +173,14 @@
     display:flex;
     gap: 16px;
     flex-wrap: wrap;
+  }
+  .hero-tagline{
+    margin-top: 28px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.02rem;
+    color: var(--moon-glow);
+    opacity: 0.92;
   }
   .btn{
     display:inline-flex;
@@ -238,8 +250,10 @@
     aspect-ratio: 4/5;
     border-radius: 22px;
     background:
-      radial-gradient(circle at 30% 20%, rgba(232,196,104,0.5), transparent 45%),
-      linear-gradient(160deg, var(--chocolate-mid), var(--chocolate-dark) 75%);
+      linear-gradient(180deg, rgba(36,21,9,0.05) 45%, rgba(20,12,6,0.75) 100%),
+      url('images/about-dere-kenari.png');
+    background-size: cover;
+    background-position: center;
     position:relative;
     overflow:hidden;
     box-shadow: var(--shadow);
@@ -350,21 +364,29 @@
     font-weight: 600;
     letter-spacing: 0.02em;
   }
-  .ph1{ background: linear-gradient(150deg,#6b4226,#2c1a10); }
-  .ph2{ background: linear-gradient(150deg,#8a5a34,#3a2414); }
-  .ph3{ background: linear-gradient(150deg,#4a2e1a,#1c1108); }
-  .ph4{ background: linear-gradient(150deg,#7a4d2c,#2a180c); }
-  .ph5{ background: linear-gradient(150deg,#5c3a21,#221306); }
+  .gallery-grid figure{ background-size: cover; background-position: center; }
+  .ph1{ background-image: url('images/galeri-gunbatimi-gol.png'); }
+  .ph2{ background-image: url('images/galeri-tokusturma.png'); }
+  .ph3{ background-image: url('images/galeri-selale-sicak-kahve.png'); }
+  .ph4{ background-image: url('images/galeri-kruvasan.png'); }
+  .ph5{ background-image: url('images/galeri-brownie.png'); }
   .gallery-grid figure::before{
     content:"";
     position:absolute; inset:0;
     background: linear-gradient(to top, rgba(20,12,6,0.65), transparent 55%);
   }
 
-  .gallery-note{
-    margin-top: 18px;
-    font-size: 0.85rem;
-    color: var(--chocolate-light);
+  .gallery-video{
+    margin-top: 32px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: #000;
+  }
+  .gallery-video video{
+    width: 100%;
+    max-height: 560px;
+    display: block;
   }
 
   /* ---------- TESTIMONIALS ---------- */
@@ -581,6 +603,7 @@
         <a href="#menu" class="btn btn-gold">Menüyü Keşfet</a>
         <a href="#iletisim" class="btn btn-outline">Yol Tarifi Al</a>
       </div>
+      <p class="hero-tagline">"Dağlar dumanlı, kahve Moon'la güzel."</p>
     </div>
     <div class="moon-wrap">
       <div class="moon-glow-ring"></div>
@@ -604,7 +627,7 @@
 <section class="about" id="hakkimizda">
   <div class="wrap reveal">
     <div class="about-visual">
-      <span>Atölyemizden — Göksun</span>
+      <span>Göksun'un Doğasından</span>
     </div>
     <div>
       <div class="eyebrow">Hikayemiz</div>
@@ -667,13 +690,17 @@
       <h2>Atölyeden Sofraya</h2>
     </div>
     <div class="gallery-grid reveal">
-      <figure class="ph1"><figcaption>Çikolata Atölyemiz</figcaption></figure>
-      <figure class="ph2"><figcaption>El Yapımı Trüfler</figcaption></figure>
-      <figure class="ph3"><figcaption>Kahve Köşesi</figcaption></figure>
-      <figure class="ph4"><figcaption>Göksun Manzarası</figcaption></figure>
-      <figure class="ph5"><figcaption>Sıcak Çikolata Servisi</figcaption></figure>
+      <figure class="ph1"><figcaption>Gün Batımında Moon Molası</figcaption></figure>
+      <figure class="ph2"><figcaption>Dostlukla Yudumlanan Moon</figcaption></figure>
+      <figure class="ph3"><figcaption>Şelale Eşliğinde Sıcak Kahve</figcaption></figure>
+      <figure class="ph4"><figcaption>Çilekli, Muzlu Kruvasan</figcaption></figure>
+      <figure class="ph5"><figcaption>Çikolata Soslu Brownie</figcaption></figure>
     </div>
-    <p class="gallery-note">*Görseller yer tutucudur — kendi mekân ve ürün fotoğraflarınızla değiştirilmesi önerilir.</p>
+    <div class="gallery-video reveal">
+      <video controls playsinline preload="metadata" poster="images/hero-sisli-dag.png">
+        <source src="media/moon-tanitim.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </section>
 
