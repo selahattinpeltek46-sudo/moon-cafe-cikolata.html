@@ -463,43 +463,35 @@
     text-decoration: underline;
   }
 
-  .contact-form{
+  .whatsapp-card{
     background: var(--paper);
     border-radius: 20px;
     padding: 34px;
     box-shadow: var(--shadow);
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    gap: 10px;
   }
-  .contact-form label{
-    display:block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 6px;
+  .whatsapp-icon{
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--moon-glow), var(--moon-gold));
+    color: var(--chocolate-dark);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 4px;
+  }
+  .whatsapp-icon svg{ width: 26px; height: 26px; }
+  .whatsapp-card h3{
+    font-size: 1.3rem;
     color: var(--chocolate-dark);
   }
-  .field{ margin-bottom: 18px; }
-  .contact-form input, .contact-form textarea{
-    width:100%;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    background: var(--cream);
-    font-family: inherit;
+  .whatsapp-card p{
+    color: var(--chocolate);
     font-size: 0.94rem;
-    color: var(--ink);
   }
-  .contact-form textarea{ min-height: 100px; resize: vertical; }
-  .contact-form button{
-    width:100%;
-    border:none;
-    background: var(--chocolate-dark);
-    color: var(--cream);
-    padding: 14px;
-    border-radius: 999px;
-    font-weight:600;
-    font-size: 0.95rem;
-    cursor:pointer;
-  }
-  .form-note{ font-size: 0.78rem; color: var(--chocolate-light); margin-top: 10px; }
+  .whatsapp-card .btn{ margin-top: 8px; }
 
   /* ---------- FOOTER / QR ---------- */
   footer{
@@ -803,22 +795,14 @@
       <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Moon+222+kahve+ve+%C3%A7ikolata+G%C3%B6ksun+Kahramanmara%C5%9F" target="_blank" rel="noopener">Google Haritalar'da Aç →</a>
     </div>
 
-    <form class="contact-form reveal" onsubmit="event.preventDefault(); this.querySelector('.form-note').textContent='Teşekkürler! Mesajınız alındı, en kısa sürede dönüş yapacağız.';">
-      <div class="field">
-        <label for="name">Adınız</label>
-        <input id="name" type="text" placeholder="Adınız Soyadınız" required>
+    <div class="whatsapp-card reveal">
+      <div class="whatsapp-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.1h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.37c0-4.53 3.69-8.22 8.24-8.22a8.19 8.19 0 0 1 8.22 8.22c0 4.53-3.69 8.23-8.21 8.23Zm4.51-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
       </div>
-      <div class="field">
-        <label for="email">E-posta</label>
-        <input id="email" type="email" placeholder="ornek@eposta.com" required>
-      </div>
-      <div class="field">
-        <label for="message">Mesajınız</label>
-        <textarea id="message" placeholder="Rezervasyon, toplu sipariş veya sorularınız için yazın..." required></textarea>
-      </div>
-      <button type="submit">Mesaj Gönder</button>
-      <p class="form-note">Bu form şu an için görsel bir taslaktır; gerçek gönderimi çalışması için bir e-posta servisi (ör. Formspree) veya kendi sunucunuza bağlanması gerekir.</p>
-    </form>
+      <h3>Hemen Yazın</h3>
+      <p>Rezervasyon, toplu sipariş veya sorularınız için bize doğrudan WhatsApp'tan ulaşabilirsiniz — genelde birkaç dakika içinde dönüş yapıyoruz.</p>
+      <a class="btn btn-gold" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20web%20sitenizden%20yaz%C4%B1yorum." target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
+    </div>
   </div>
 </section>
 
