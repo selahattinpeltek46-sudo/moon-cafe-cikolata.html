@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menü — Moon 222 Kahve & Çikolata</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #F2E6D3;
+    --cream-soft: #E9D8B8;
+    --paper: #FBF4E6;
+    --chocolate-dark: #241509;
+    --chocolate: #402615;
+    --chocolate-mid: #5C3A21;
+    --chocolate-light: #8B5E3C;
+    --moon-gold: #C9A227;
+    --moon-glow: #E8C468;
+    --ink: #241610;
+    --line: rgba(36,21,9,0.14);
+    --shadow: 0 20px 45px -25px rgba(36,21,9,0.55);
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{ font-family: 'Fraunces', serif; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  a{ color: inherit; }
+  .wrap{ max-width: 620px; margin: 0 auto; padding: 0 22px; }
+
+  /* ---------- HEADER ---------- */
+  .menu-header{
+    background:
+      linear-gradient(180deg, rgba(23,13,5,0.35) 0%, rgba(23,13,5,0.88) 100%),
+      url('images/hero-sisli-dag.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--cream);
+    padding: 28px 0 26px;
+    text-align: center;
+  }
+  .menu-header .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(251,244,230,0.8);
+    text-decoration: none;
+    margin-bottom: 18px;
+  }
+  .menu-header .brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+  }
+  .menu-header svg{ width:30px; height:30px; }
+  .menu-header .brand-name{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size: 1.35rem;
+    color: var(--paper);
+  }
+  .menu-header .brand-sub{
+    font-family:'Work Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight:600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--moon-glow);
+    display:block;
+    margin-top: 3px;
+  }
+  .menu-header .eyebrow{
+    margin-top: 16px;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--moon-glow);
+  }
+  .menu-header h1{
+    margin-top: 8px;
+    font-size: clamp(1.7rem, 6vw, 2.1rem);
+    color: var(--paper);
+  }
+
+  /* ---------- CATEGORY NAV ---------- */
+  .cat-nav{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(242,230,211,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    display:flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 12px 22px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .cat-nav::-webkit-scrollbar{ display:none; }
+  .cat-nav a{
+    flex-shrink:0;
+    text-decoration:none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--chocolate);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 8px 16px;
+    border-radius: 999px;
+  }
+
+  /* ---------- MENU ---------- */
+  .menu-body{ padding: 34px 0 20px; }
+  .cat-section{ margin-bottom: 42px; scroll-margin-top: 64px; }
+  .cat-title{
+    display:flex;
+    align-items:baseline;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--moon-gold);
+  }
+  .cat-title h2{ font-size: 1.4rem; color: var(--chocolate-dark); }
+  .cat-title span{ font-size: 0.78rem; color: var(--chocolate-light); }
+
+  .item{
+    display:flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .item:last-child{ border-bottom:none; }
+  .item-info{ flex: 1; }
+  .item-info strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--chocolate-dark);
+  }
+  .item-info p{
+    margin: 4px 0 0;
+    font-size: 0.86rem;
+    color: var(--chocolate-light);
+    max-width: 380px;
+  }
+  .item-price{
+    flex-shrink:0;
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--moon-gold);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  .menu-note{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 0.85rem;
+    color: var(--chocolate-light);
+    margin-bottom: 42px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .menu-footer{
+    background: var(--chocolate-dark);
+    color: var(--cream);
+    padding: 38px 0 30px;
+    text-align:center;
+  }
+  .menu-footer p{ font-size: 0.86rem; color: rgba(251,244,230,0.7); margin: 4px 0; }
+  .menu-footer .btn-wa{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top: 18px;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration:none;
+    background: linear-gradient(135deg, var(--moon-glow), var(--moon-gold));
+    color: var(--chocolate-dark);
+  }
+  .menu-footer .btn-wa svg{ width:18px; height:18px; }
+</style>
+</head>
+<body>
+
+<header class="menu-header">
+  <div class="wrap">
+    <a class="back-link" href="index.html">← Moon 222 Ana Sayfa</a>
+    <div class="brand">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M24 6a14 14 0 1 0 10 24A11 11 0 0 1 24 6Z" fill="#C9A227"/></svg>
+      <span>
+        <span class="brand-name">Moon 222</span>
+        <span class="brand-sub">Kahve &amp; Çikolata</span>
+      </span>
+    </div>
+    <div class="eyebrow">Göksun · Kahramanmaraş</div>
+    <h1>Menü</h1>
+  </div>
+</header>
+
+<nav class="cat-nav">
+  <a href="#kahveler">☕ Kahveler</a>
+  <a href="#cikolatalar">🍫 Çikolatalar</a>
+  <a href="#tatlilar">🥮 Tatlılar</a>
+</nav>
+
+<main class="menu-body">
+  <div class="wrap">
+
+    <section class="cat-section" id="kahveler">
+      <div class="cat-title">
+        <h2>☕ Kahveler</h2>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Türk Kahvesi</strong><p>Köz ateşinde pişen, geleneksel usul.</p></div>
+        <div class="item-price">60₺</div>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Filtre Kahve</strong><p>Taze çekirdeklerden, güne uyanan aroma.</p></div>
+        <div class="item-price">75₺</div>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Ay Işığı Latte</strong><p>Moon'a özel, yumuşak ve dengeli tarif.</p></div>
+        <div class="item-price">95₺</div>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Sıcak Çikolata</strong><p>Belçika çikolatasından, yoğun ve kadifemsi.</p></div>
+        <div class="item-price">90₺</div>
+      </div>
+    </section>
+
+    <section class="cat-section" id="cikolatalar">
+      <div class="cat-title">
+        <h2>🍫 Çikolatalar</h2>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Bitter Çikolata (100g)</strong><p>Yüksek kakao oranlı, orijinal Belçika çikolatası.</p></div>
+        <div class="item-price">140₺</div>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Sütlü Fındıklı (100g)</strong><p>Kavrulmuş fındıkla zenginleştirilmiş sütlü çikolata.</p></div>
+        <div class="item-price">150₺</div>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Cevizli Trüf (6'lı)</strong><p>El yapımı, yerel cevizle hazırlanan trüf kutusu.</p></div>
+        <div class="item-price">180₺</div>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Göksun Özel Karışık Kutu</strong><p>Atölyemizin en sevilen çeşitlerinden özel seçki.</p></div>
+        <div class="item-price">260₺</div>
+      </div>
+    </section>
+
+    <section class="cat-section" id="tatlilar">
+      <div class="cat-title">
+        <h2>🥮 Tatlılar</h2>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Çikolatalı Sufle</strong><p>Sıcak servis edilen, akışkan çikolata dolgulu.</p></div>
+        <div class="item-price">110₺</div>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Çikolata Söğüş Kek</strong><p>Islak, yoğun kakaolu ev yapımı kek.</p></div>
+        <div class="item-price">95₺</div>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Karamelli Cheesecake</strong><p>Kremamsı cheesecake, ev yapımı karamel sos.</p></div>
+        <div class="item-price">120₺</div>
+      </div>
+      <div class="item">
+        <div class="item-info"><strong>Günün Tatlısı</strong><p>Atölyeden günlük sürpriz lezzet, bize sorun.</p></div>
+        <div class="item-price">Sorunuz</div>
+      </div>
+    </section>
+
+    <p class="menu-note">Fiyatlar ve ürünler güncellenebilir. Güncel bilgi için lütfen personelimize danışın.</p>
+  </div>
+</main>
+
+<footer class="menu-footer">
+  <div class="wrap">
+    <p><strong>Moon 222 Kahve &amp; Çikolata</strong></p>
+    <p>Cumhuriyet Mahallesi, Şehit Piyade Resul Tokaç Caddesi No:1/H, 46600 Göksun/Kahramanmaraş</p>
+    <p>7/24 Açık · Paket servis mevcut</p>
+    <a class="btn-wa" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20men%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.1h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.37c0-4.53 3.69-8.22 8.24-8.22a8.19 8.19 0 0 1 8.22 8.22c0 4.53-3.69 8.23-8.21 8.23Zm4.51-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+      WhatsApp'tan Sipariş Sor
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
