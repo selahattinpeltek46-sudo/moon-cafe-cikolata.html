@@ -63,6 +63,17 @@
 
   section{ position: relative; }
 
+  /* ---------- TOPBAR ---------- */
+  .topbar{
+    background: var(--chocolate-dark);
+    color: var(--moon-glow);
+    text-align:center;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 8px 16px;
+  }
+
   /* ---------- NAV ---------- */
   header{
     position: sticky;
@@ -405,6 +416,13 @@
     color: var(--moon-glow);
     text-decoration: underline;
   }
+  .menu-trust-note{
+    text-align:center;
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: rgba(251,244,230,0.55);
+  }
+  .menu-trust-note a{ color: var(--moon-glow); text-decoration: underline; }
 
   /* ---------- GALLERY ---------- */
   .gallery{ padding: 100px 0; }
@@ -630,6 +648,34 @@
     .foot-grid{ grid-template-columns: 1fr; gap: 30px; }
   }
 
+  /* ---------- MOBILE QUICK BAR ---------- */
+  .mobile-bar{ display:none; }
+  @media (max-width: 880px){
+    body{ padding-bottom: 64px; }
+    .mobile-bar{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      position: fixed;
+      inset: auto 0 0 0;
+      z-index: 45;
+      background: rgba(36,21,9,0.97);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(232,196,104,0.18);
+    }
+    .mobile-bar a{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap: 3px;
+      padding: 9px 4px 10px;
+      color: rgba(251,244,230,0.85);
+      font-size: 0.66rem;
+      font-weight: 600;
+    }
+    .mobile-bar svg{ width:19px; height:19px; color: var(--moon-glow); }
+  }
+
   /* mobile nav panel */
   .mobile-panel{
     position: fixed; inset: 0 0 auto 0;
@@ -647,6 +693,8 @@
 </style>
 </head>
 <body>
+
+<div class="topbar">✦ Göksun'un ay ışığı kahvesi — 7/24 açık, paket servis mevcut</div>
 
 <header>
   <nav class="wrap">
@@ -795,6 +843,7 @@
       </div>
     </div>
     <a class="menu-full-link" href="menu.html">Tam Menüyü Görüntüle →</a>
+    <p class="menu-trust-note">Fiyatlar güncellenebilir — güncel liste için <a href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20g%C3%BCncel%20men%C3%BCn%C3%BCz%C3%BC%20%C3%B6%C4%9Frenebilir%20miyim%3F" target="_blank" rel="noopener">WhatsApp'tan sorabilirsiniz</a>.</p>
   </div>
 </section>
 
@@ -943,6 +992,21 @@
     <span>Göksun, Kahramanmaraş</span>
   </div>
 </footer>
+
+<nav class="mobile-bar" aria-label="Mobil hızlı işlemler">
+  <a href="tel:+905435642071">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6A2 2 0 0 1 22 16.9Z"/></svg>
+    Ara
+  </a>
+  <a href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.1h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.37c0-4.53 3.69-8.22 8.24-8.22a8.19 8.19 0 0 1 8.22 8.22c0 4.53-3.69 8.23-8.21 8.23Zm4.51-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+    WhatsApp
+  </a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Moon+222+kahve+ve+%C3%A7ikolata+G%C3%B6ksun+Kahramanmara%C5%9F" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    Yol Tarifi
+  </a>
+</nav>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
