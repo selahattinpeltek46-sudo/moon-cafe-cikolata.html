@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0a09">
+  <meta name="description" content="Moon 222 Kahve ve Çikolata — Göksun'da kahve, çikolata ve tatlı keyfi.">
+  <title>Moon 222 | Kahve & Çikolata — Göksun</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Moon 222 | Kahve & Çikolata">
+  <meta property="og:description" content="Kahve, çikolata ve tatlıyı aynı atmosferde buluşturan Moon 222.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=1600&q=85">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#0b0a09; --ink2:#12100e; --cream:#f4efe7; --paper:#fbf8f2;
+      --gold:#cda45a; --gold2:#e2c27e; --muted:#bdb4a7; --line:rgba(226,194,126,.22);
+      --shadow:0 24px 70px rgba(0,0,0,.28); --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--ink);color:#fff;font-family:"DM Sans",sans-serif;line-height:1.65}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    a{text-decoration:none;color:inherit}
+    button,a{ -webkit-tap-highlight-color:transparent }
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{height:34px;background:#19130f;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;color:#d7c4a1;font-size:12px;letter-spacing:.04em}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,10,9,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .moon-mark{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:22px;position:relative}
+    .moon-mark:after{content:"";position:absolute;width:29px;height:29px;border-radius:50%;background:var(--ink);transform:translate(7px,-4px)}
+    .brand-text strong{display:block;font-family:"Cormorant Garamond",serif;font-size:26px;line-height:.8;letter-spacing:.09em}
+    .brand-text span{display:block;font-size:9px;letter-spacing:.25em;color:#c9c0b4;margin-top:8px}
+    .links{display:flex;align-items:center;gap:28px;font-size:13px;color:#d6d0c8}
+    .links a{transition:.25s}
+    .links a:hover{color:var(--gold2)}
+    .nav-cta,.btn-gold{background:linear-gradient(135deg,#d9b66d,#b88b3d);color:#16110a;padding:12px 18px;border-radius:999px;font-weight:700;box-shadow:0 8px 24px rgba(205,164,90,.18)}
+    .menu-btn{display:none;border:1px solid var(--line);background:transparent;color:white;border-radius:12px;padding:9px 12px;font-size:18px}
+
+    .hero{min-height:760px;display:grid;align-items:end;position:relative;overflow:hidden;background:
+      linear-gradient(90deg,rgba(6,5,4,.98) 0%,rgba(6,5,4,.86) 37%,rgba(6,5,4,.28) 70%,rgba(6,5,4,.5) 100%),
+      url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=88") center/cover}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:240px;background:linear-gradient(transparent,var(--ink))}
+    .hero-content{position:relative;z-index:2;padding:100px 0 105px;max-width:650px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold2);font-size:12px;text-transform:uppercase;letter-spacing:.2em;font-weight:700}
+    .eyebrow:before{content:"";width:34px;height:1px;background:var(--gold)}
+    h1,h2,h3{font-family:"Cormorant Garamond",serif;margin:0;line-height:.98}
+    h1{font-size:clamp(58px,8vw,105px);font-weight:600;letter-spacing:-.03em;margin-top:20px}
+    h1 em{font-style:normal;color:var(--gold2)}
+    .hero-copy{font-size:17px;color:#d7d0c6;max-width:570px;margin:28px 0 34px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border-radius:999px;border:1px solid rgba(255,255,255,.25);font-size:13px;font-weight:700;transition:.25s}
+    .btn:hover{transform:translateY(-2px);border-color:var(--gold)}
+    .btn-outline{background:rgba(0,0,0,.24)}
+    .hero-note{display:flex;gap:25px;margin-top:38px;color:#c4bcb0;font-size:12px}
+    .hero-note b{color:#fff;font-size:13px;display:block}
+
+    .trust{position:relative;z-index:5;margin-top:-58px}
+    .trust-card{background:var(--paper);color:#17120e;border-radius:20px;display:grid;grid-template-columns:repeat(4,1fr);box-shadow:var(--shadow);overflow:hidden}
+    .trust-item{padding:25px 24px;border-right:1px solid #ded6cb}
+    .trust-item:last-child{border:0}
+    .trust-icon{font-size:23px;color:#9b6e2d;margin-bottom:8px}
+    .trust-item strong{display:block;font-size:13px}
+    .trust-item span{font-size:12px;color:#756e65}
+
+    section{padding:115px 0}
+    .section-light{background:var(--paper);color:#17120e}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px}
+    .kicker{color:#9d7338;text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:700}
+    h2{font-size:clamp(43px,5vw,66px);font-weight:600;margin-top:10px}
+    .lead{max-width:540px;color:#736c64;font-size:15px}
+    .story{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+    .story-media{height:560px;display:grid;grid-template-columns:1.25fr .75fr;gap:12px}
+    .story-media .big{border-radius:26px 26px 6px 26px;overflow:hidden}
+    .story-media .small{border-radius:6px 26px 26px 26px;overflow:hidden;margin-top:80px}
+    .story-copy p{color:#716960;font-size:15px}
+    .signature{font-family:"Cormorant Garamond",serif;font-size:28px;color:#936b31;margin:24px 0}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+    .check{display:flex;gap:10px;align-items:flex-start;font-size:13px}
+    .check b{color:#9d7338}
+
+    .menu-section{background:#11100e}
+    .menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .menu-card{min-height:330px;border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden;background-size:cover;background-position:center}
+    .menu-card:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 25%,rgba(0,0,0,.88))}
+    .menu-card>*{position:relative}
+    .menu-card .num{font-size:11px;color:var(--gold2);letter-spacing:.15em}
+    .menu-card h3{font-size:33px;margin:8px 0}
+    .menu-card p{font-size:12px;color:#d5cec4;margin:0}
+    .menu-card:nth-child(1){background-image:url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85")}
+    .menu-card:nth-child(2){background-image:url("https://images.unsplash.com/photo-1548907040-4d42e42b5f74?auto=format&fit=crop&w=900&q=85")}
+    .menu-card:nth-child(3){background-image:url("https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85")}
+    .menu-card:nth-child(4){background-image:url("https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85")}
+    .menu-bottom{margin-top:25px;padding:20px 22px;border:1px solid var(--line);border-radius:18px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#cfc7bc;font-size:13px}
+
+    .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:250px 250px;gap:12px}
+    .gallery figure{margin:0;overflow:hidden;border-radius:18px}
+    .gallery .wide{grid-row:span 2}
+    .gallery img{transition:transform .7s}
+    .gallery figure:hover img{transform:scale(1.04)}
+    .g1{background:url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85") center/cover}
+    .g2{background:url("https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=900&q=85") center/cover}
+    .g3{background:url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85") center/cover}
+    .g4{background:url("https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85") center/cover}
+    .g5{background:url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85") center/cover}
+
+    .reviews{background:#f0ebe3}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .review{background:#fff;border:1px solid #e2dcd2;border-radius:20px;padding:28px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+    .stars{color:#b8863f;letter-spacing:2px}
+    .review p{font-family:"Cormorant Garamond",serif;font-size:23px;line-height:1.18;margin:20px 0}
+    .review small{color:#777067;font-weight:600}
+
+    .contact{background:#0d0c0a}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .contact-card{border:1px solid var(--line);border-radius:24px;padding:34px;background:linear-gradient(145deg,#171410,#0e0d0b)}
+    .contact-list{display:grid;gap:18px;margin-top:28px}
+    .contact-row{display:flex;gap:14px}
+    .contact-row .icon{width:40px;height:40px;border-radius:12px;background:#211a12;display:grid;place-items:center;color:var(--gold2)}
+    .contact-row strong{display:block;font-size:13px}
+    .contact-row span{display:block;color:#aaa198;font-size:12px;margin-top:2px}
+    .map{min-height:420px;border-radius:22px;overflow:hidden;position:relative;background:
+      linear-gradient(135deg,rgba(205,164,90,.15),rgba(0,0,0,.2)),
+      url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80") center/cover}
+    .map:after{content:"Göksun • Kahramanmaraş";position:absolute;left:24px;bottom:24px;background:rgba(12,10,8,.88);border:1px solid var(--line);padding:12px 16px;border-radius:14px;font-size:12px;color:#eee}
+
+    footer{padding:42px 0 90px;background:#080706;border-top:1px solid rgba(255,255,255,.07)}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+    footer p,footer a{color:#938b82;font-size:12px}
+    .footer-title{color:#fff;font-size:13px;font-weight:700;margin-bottom:12px}
+    .copyright{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#706961;font-size:11px}
+    .whatsapp{position:fixed;right:22px;bottom:22px;z-index:100;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;font-size:26px;box-shadow:0 12px 30px rgba(0,0,0,.3);border:4px solid rgba(255,255,255,.9)}
+    .mobile-bar{display:none}
+
+    @media(max-width:900px){
+      .links{display:none}.menu-btn{display:block}.nav-cta{display:none}
+      .hero{min-height:720px}.hero-content{padding-bottom:115px}
+      .trust-card{grid-template-columns:1fr 1fr}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid #ded6cb}
+      .story{grid-template-columns:1fr;gap:45px}.story-media{height:440px}
+      .menu-grid{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}.gallery .wide{grid-row:span 2}
+      .contact-grid{grid-template-columns:1fr}.review-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      .container{width:min(100% - 28px,1160px)}
+      .topbar{font-size:10px}
+      .nav{height:68px}
+      .brand-text strong{font-size:22px}.moon-mark{width:38px;height:38px}
+      .hero{min-height:700px;background-position:62% center}
+      .hero-content{padding:85px 0 100px}
+      h1{font-size:59px}
+      .hero-copy{font-size:15px}
+      .hero-note{gap:14px;flex-wrap:wrap}
+      section{padding:78px 0}
+      .section-head{display:block}.section-head .btn{margin-top:22px}
+      .trust{margin-top:-38px}.trust-card{grid-template-columns:1fr}
+      .trust-item{border-right:0!important;border-bottom:1px solid #ded6cb!important}
+      .trust-item:last-child{border-bottom:0!important}
+      .story-media{height:350px;gap:8px}.story-media .small{margin-top:45px}
+      .checks{grid-template-columns:1fr}
+      .menu-grid{grid-template-columns:1fr}.menu-card{min-height:310px}
+      .menu-bottom{display:block}.menu-bottom .btn{margin-top:15px}
+      .gallery{grid-template-columns:1fr 1fr;grid-template-rows:170px 170px 170px}.gallery .wide{grid-row:span 2}
+      .contact-card{padding:24px}.map{min-height:280px}
+      .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}
+      .copyright{display:block}.copyright span{display:block;margin-top:8px}
+      .mobile-bar{position:fixed;bottom:0;left:0;right:0;height:67px;background:rgba(10,9,8,.96);backdrop-filter:blur(14px);z-index:90;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--line)}
+      .mobile-bar a{display:grid;place-items:center;font-size:10px;color:#d9d1c6;gap:2px}.mobile-bar b{font-size:18px;color:var(--gold2)}
+      .whatsapp{right:15px;bottom:82px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">✦ Taze kahve, çikolata ve tatlı keyfi • Göksun'da Moon 222</div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#anasayfa" aria-label="Moon 222 ana sayfa">
+        <span class="moon-mark">☾</span>
+        <span class="brand-text"><strong>MOON 222</strong><span>KAHVE & ÇİKOLATA</span></span>
+      </a>
+      <nav class="links" aria-label="Ana menü">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hikaye">Hakkımızda</a>
+        <a href="#menu">Menümüz</a>
+        <a href="#galeri">Atmosfer</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20bilgi%20almak%20istiyorum.">WhatsApp'tan Ulaş</a>
+      <button class="menu-btn" onclick="document.body.classList.toggle('open')" aria-label="Menüyü aç">☰</button>
+    </div>
+  </header>
+
+  <main id="anasayfa">
+    <section class="hero">
+      <div class="container hero-content">
+        <span class="eyebrow">Göksun • Kahve • Çikolata</span>
+        <h1>Kahvenin<br><em>ötesinde</em> bir<br>keyif.</h1>
+        <p class="hero-copy">İyi kahve, çikolatanın büyüsü ve kendinizi rahat hissedeceğiniz bir atmosfer. Moon 222'de kısa bir mola, güzel bir buluşmaya dönüşür.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#menu">Menümüzü Keşfet →</a>
+          <a class="btn btn-outline" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20masa%20ve%20men%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">Rezervasyon / Bilgi</a>
+        </div>
+        <div class="hero-note">
+          <div><b>Moon 222</b>Göksun'un kahve & çikolata durağı</div>
+          <div><b>Her gün</b>Keyfinize göre bir mola</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container trust">
+      <div class="trust-card">
+        <div class="trust-item"><div class="trust-icon">☕</div><strong>Nitelikli Kahve</strong><span>Özenli sunum, iyi kahve deneyimi</span></div>
+        <div class="trust-item"><div class="trust-icon">✦</div><strong>Çikolata Keyfi</strong><span>Çikolata ve tatlı seçkileri</span></div>
+        <div class="trust-item"><div class="trust-icon">⌂</div><strong>Sıcak Atmosfer</strong><span>Buluşmalar ve sakin molalar için</span></div>
+        <div class="trust-item"><div class="trust-icon">♡</div><strong>Göksun'da</strong><span>Merkezi konumda kolay ulaşım</span></div>
+      </div>
+    </div>
+
+    <section id="hikaye" class="section-light">
+      <div class="container story">
+        <div class="story-media">
+          <div class="big"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1100&q=88" alt="Kahve sunumu" loading="lazy"></div>
+          <div class="small"><img src="https://images.unsplash.com/photo-1548907040-4d42e42b5f74?auto=format&fit=crop&w=800&q=88" alt="Çikolata" loading="lazy"></div>
+        </div>
+        <div class="story-copy">
+          <span class="kicker">Bizim hikâyemiz</span>
+          <h2>Sadece bir kahve molası değil.</h2>
+          <p>Moon 222; kahve, çikolata ve tatlıyı güzel bir atmosferle bir araya getiren, Göksun'da keyifli vakit geçirmek isteyenlerin uğrak noktası olmayı hedefleyen bir kafe.</p>
+          <p>İster güne kısa bir kahve molası verin, ister arkadaşlarınızla uzun bir sohbete oturun. Burada önemli olan sadece ne içtiğiniz değil, o anın sizde nasıl kaldığı.</p>
+          <div class="signature">Moon 222 — Keyfin adresi.</div>
+          <div class="checks">
+            <div class="check"><b>✓</b><span>Özenli sunum ve sıcak servis</span></div>
+            <div class="check"><b>✓</b><span>Kahve & çikolata odaklı seçki</span></div>
+            <div class="check"><b>✓</b><span>Sohbet ve buluşmalar için atmosfer</span></div>
+            <div class="check"><b>✓</b><span>Göksun merkezde kolay ulaşım</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="kicker">Lezzet seçkisi</span><h2>Menüde<br>ne var?</h2></div>
+          <p class="lead">Menünüz ve güncel fiyatlar değişebileceği için burada sabit fiyat uydurmak yerine, güncel menüyü doğrudan işletmeden öğrenebileceğiniz net bir akış tasarladık.</p>
+        </div>
+        <div class="menu-grid">
+          <a class="menu-card" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20kahve%20men%C3%BCn%C3%BCz%C3%BC%20g%C3%B6nderebilir%20misiniz%3F"><span class="num">01 / KAHVE</span><h3>Kahve</h3><p>Günün temposuna eşlik edecek sıcak ve soğuk kahve seçenekleri.</p></a>
+          <a class="menu-card" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20%C3%A7ikolata%20ve%20tatl%C4%B1%20se%C3%A7eneklerinizi%20g%C3%B6nderebilir%20misiniz%3F"><span class="num">02 / ÇİKOLATA</span><h3>Çikolata</h3><p>Çikolata tutkunları için hazırlanmış seçkileri keşfedin.</p></a>
+          <a class="menu-card" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20tatl%C4%B1%20%C3%A7e%C5%9Fitlerinizi%20g%C3%B6nderebilir%20misiniz%3F"><span class="num">03 / TATLI</span><h3>Tatlı</h3><p>Kahvenizin yanına yakışacak tatlı bir mola.</p></a>
+          <a class="menu-card" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20g%C3%BCncel%20i%C3%A7ecek%20men%C3%BCn%C3%BCz%C3%BC%20g%C3%B6nderebilir%20misiniz%3F"><span class="num">04 / İÇECEK</span><h3>İçecek</h3><p>Farklı damak zevklerine hitap eden sıcak ve soğuk alternatifler.</p></a>
+        </div>
+        <div class="menu-bottom">
+          <span><strong>Güncel menüyü mü arıyorsunuz?</strong><br>WhatsApp'tan güncel ürünleri ve fiyatları isteyin.</span>
+          <a class="btn btn-gold" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20g%C3%BCncel%20men%C3%BCn%C3%BCz%C3%BC%20payla%C5%9Fabilir%20misiniz%3F">Güncel Menüyü İste →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeri" class="section-light">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="kicker">Moon atmosferi</span><h2>Bir de<br>yakından bakın.</h2></div>
+          <p class="lead">Fotoğraflarınız eklendiğinde bu bölüm işletmenin gerçek atmosferini satacak şekilde kullanılmalı: mekan, ürün, detay ve insan.</p>
+        </div>
+        <div class="gallery">
+          <figure class="wide g1" aria-label="Kafe atmosferi"></figure>
+          <figure class="g2" aria-label="Kahve detayı"></figure>
+          <figure class="g3" aria-label="Tatlı detayı"></figure>
+          <figure class="g4" aria-label="Çikolata detayı"></figure>
+          <figure class="g5" aria-label="Kahve"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="yorumlar" class="reviews">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="kicker">Sosyal kanıt</span><h2>Misafirlerimizin<br>deneyimi.</h2></div>
+          <p class="lead">Buradaki örnek yorum alanı, yayına almadan önce işletmenin gerçek Google yorumlarından seçilecek doğrulanabilir alıntılarla değiştirilmelidir.</p>
+        </div>
+        <div class="review-grid">
+          <article class="review"><div class="stars">★★★★★</div><p>"Kahvesi, atmosferi ve güler yüzlü hizmetiyle tekrar gelmek isteyeceğiniz bir mekan."</p><small>Google yorumu alanı • Gerçek yorumla değiştirilmeli</small></article>
+          <article class="review"><div class="stars">★★★★★</div><p>"Tatlı ve kahve eşleşmesi için güzel bir durak. Mekanın sıcak havası ayrıca keyifli."</p><small>Google yorumu alanı • Gerçek yorumla değiştirilmeli</small></article>
+          <article class="review"><div class="stars">★★★★★</div><p>"Arkadaşlarla sohbet etmek, kahve içmek ve biraz mola vermek için güzel bir seçenek."</p><small>Google yorumu alanı • Gerçek yorumla değiştirilmeli</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim" class="contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <span class="kicker">Bize ulaşın</span>
+          <h2>Bir kahveye<br>bekleriz.</h2>
+          <div class="contact-list">
+            <a class="contact-row" href="tel:+905435642071"><span class="icon">☎</span><span><strong>0543 564 20 71</strong><span>Telefon / WhatsApp</span></span></a>
+            <div class="contact-row"><span class="icon">⌖</span><span><strong>Cumhuriyet Mahallesi, Şehit Piyade Resul Tokaç Caddesi No:1/H</strong><span>46600 Göksun / Kahramanmaraş</span></span></div>
+            <a class="contact-row" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Moon%20222%20Kahve%20ve%20%C3%87ikolata%20G%C3%B6ksun"><span class="icon">↗</span><span><strong>Yol tarifi al</strong><span>Google Maps'te aç</span></span></a>
+          </div>
+          <div class="actions" style="margin-top:30px">
+            <a class="btn btn-gold" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20bilgi%20almak%20istiyorum.">WhatsApp'tan Yaz</a>
+            <a class="btn btn-outline" href="tel:+905435642071">Ara</a>
+          </div>
+        </div>
+        <a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Moon%20222%20Kahve%20ve%20%C3%87ikolata%20G%C3%B6ksun" aria-label="Google Maps'te konumu aç"></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="brand"><span class="moon-mark">☾</span><span class="brand-text"><strong>MOON 222</strong><span>KAHVE & ÇİKOLATA</span></span></div><p style="max-width:360px;margin-top:18px">Kahve, çikolata ve tatlıyı güzel bir atmosferle buluşturan Moon 222.</p></div>
+        <div><div class="footer-title">Hızlı bağlantılar</div><p><a href="#hikaye">Hakkımızda</a></p><p><a href="#menu">Menümüz</a></p><p><a href="#galeri">Atmosfer</a></p><p><a href="#iletisim">İletişim</a></p></div>
+        <div><div class="footer-title">İletişim</div><p>0543 564 20 71</p><p>Göksun / Kahramanmaraş</p><p><a href="https://wa.me/905435642071">WhatsApp</a></p></div>
+      </div>
+      <div class="copyright"><span>© 2026 Moon 222 Kahve & Çikolata</span><span>Göksun • Kahramanmaraş</span></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20bilgi%20almak%20istiyorum." aria-label="WhatsApp'tan iletişim">◔</a>
+
+  <nav class="mobile-bar" aria-label="Mobil hızlı işlemler">
+    <a href="tel:+905435642071"><b>☎</b>Ara</a>
+    <a href="https://wa.me/905435642071?text=Merhaba%20Moon%20222%2C%20bilgi%20almak%20istiyorum."><b>◔</b>WhatsApp</a>
+    <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Moon%20222%20Kahve%20ve%20%C3%87ikolata%20G%C3%B6ksun"><b>⌖</b>Yol Tarifi</a>
+  </nav>
+
+  <script>
+    // Mobil menü: linke tıklayınca menü durumunu kapat
+    document.querySelectorAll('.links a').forEach(a => a.addEventListener('click', () => document.body.classList.remove('open')));
+  </script>
+</body>
+</html>
